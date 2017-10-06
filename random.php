@@ -53,8 +53,8 @@ $full_size = pow(2, 10) + 1; // 1025
 
 ////////////////////////////////////////////
 
-// Create 10 images
-for($i = 0; $i <= 10; $i++){
+// Create 1 random image
+for($i = 0; $i <= 1; $i++){
     $cellular_automata = imagecreatetruecolor($full_size, $full_size); /* New Image */
 
     /* Create random seed */
@@ -71,7 +71,7 @@ for($i = 0; $i <= 10; $i++){
 	}
 
 	/* For each row & column pixel in the image */
-	$rule = mt_rand(1, 30); // $i
+	$rule = mt_rand(0, 255);
 	for($row = 1; $row <= $full_size; $row++){
 		$seed = ElementaryCellularAutomata($rule, $seed); /* Compute the new $seed */
 		$current_seed = str_split($seed); /* Split the $seed string into an array */
